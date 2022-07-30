@@ -2,6 +2,8 @@ r1 = {"hostname":"10.141.50.196", "port":"22", "username":"cisco", "password":"c
 r2 = {"hostname":"10.141.50.187", "port":"22", "username":"cisco", "password":"cisco"}
 r3 = {"hostname":"10.141.50.183", "port":"22", "username":"cisco", "password":"cisco"}
 
+def main():
+    pass
 
 if __name__ == '__main__':
-    
+    main()
