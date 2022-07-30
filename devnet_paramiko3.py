@@ -6,7 +6,8 @@ shell = get_shell(client_connection)
 
 send_command(shell, 'enable')
 send_command(shell, 'cisco')
-send_command(shell, 'show version')
+send_command(shell, 'terminal length 0')
+send_command(shell, 'show cdp neighbor')
 
 output = show(shell)
 print(output)
