@@ -27,8 +27,7 @@ for router in routers:
     minute = now.minute
     second = now.second
 
-    filename = f"{router['hostname']}-backup_{year}{month}{day}\
-                    _{hour}{minute}{second}.txt"
+    filename = f"{router['hostname']}-backup_{year}{month}{day}_{hour}{minute}{second}.txt"
     # print(filename)
     with open(filename, 'w') as backup:
         backup.writelines(output)
