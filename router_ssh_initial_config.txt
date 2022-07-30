@@ -1,0 +1,14 @@
+conf t
+hostname r2
+ip domain-name domain.com
+!
+crypto key generate rsa 2048
+!
+ip ssh version 2
+!
+line vty 0 4
+ transport input ssh telnet
+ login local
+!
+username cisco password cisco
+enable secret cisco
