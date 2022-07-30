@@ -15,7 +15,20 @@ output = show(shell)
 output_list = output.splitlines()[9:-2]
 output = '\n'.join(output_list)
 
-with open('backup-config.txt', 'w') as backup:
+from datetime import datetime
+
+now = datetime.now()
+year = now.year
+month = now.month
+day = now.day
+hour = now.hour
+minute = now.minute
+second = now.second
+
+filename = f"{r1['hostname']}-backup_{year}{month}{day}_{hour}{minute}{second}.txt"
+# print(filename)
+
+with open(filename, 'w') as backup:
     backup.writelines(output)
 
 
