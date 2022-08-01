@@ -1,5 +1,7 @@
 from myparamiko import connect, get_shell, send_command, show, close
 from routers2 import r1, r2, r3
+import threading
+
 
 def backup(router):
     client_connection = connect(**router)
@@ -33,8 +35,15 @@ def backup(router):
 
     close(shell)
 
-
 routers = [r1, r2, r3]
+threads = list()
 for router in routers:
-    backup(router)
+    th = threading.Thread(target=backup, args=(router,))
+    threads.append(th)
+
+for th in threads:
+    th.start()
+
+for th in threads:
+    th.join()
     
